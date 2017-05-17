@@ -1,0 +1,25 @@
+ 1 Kitchen Wall Oven L1
+ 2 Kitchen Wall Oven L2
+ 3 Kitchen Counter Plugs L1
+ 4 Kitchen Counter Plugs L2
+ 5 Clothes Dryer L1
+ 6 Clothes Dryer L2
+ 7 Upstairs Bedroom AFCI Arc-Fault Plugs
+ 8 Kitchen Fridge
+ 9 Clothes Washer
+10 Kitchen Dishwasher
+11 Furnace & Hot Water Unit (incl. Furnace Room Plug)
+12 Basement Plugs & Lights (incl. Outside Plugs)
+13 Heat Pump L1
+14 Heat Pump L2
+15 Garage Sub-Panel L1
+16 Garage Sub-Panel L2
+17 Upstairs Plugs & Lights L1 (incl. Bathroom Lights and Vent Fan, Smoke Alarms, Living Room Plugs)
+18 Upstairs Plugs & Lights L2 (incl. Bathroom Lights and Vent Fan, Smoke Alarms, Living Room Plugs)
+19 Basement Blue Plugs (incl. Ent. TV/Amp/DVD/PVR)
+20 Bathrooms (incl. 3 GFCI Plugs, 2 Lights, 1 Vent Fan, Chest Freezer)
+21 Rental Suite Sub-Panel L1
+22 Rental Suite Sub-Panel L2
+23 Misc. Plugs (incl. Dining Room, Gas Cooktop, Microwave)
+24 Home Office (incl. Telco/Cable/Net/Security Equip.)
+

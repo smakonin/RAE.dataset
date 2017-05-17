@@ -1,0 +1,4 @@
+House  Location                Service         Elevation  Built, Last Reno  Levels, Tl Space  HVAC                Notes 
+-----  ----------------------  --------------  ---------  ----------------  ----------------  ---------------  -------------------------------------------------
+    1  Burnaby, BC, Canada     Split, 1-phase       80 m  1955, 2006        1+B, 99.5 m^2     Gas & Heat Pump   see https://dx.doi.org/10.1038%2Fsdata.2016.37
+
