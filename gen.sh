@@ -8,11 +8,11 @@ elif [ "$1" = "yesterday" ]; then
 else
 	dt=$1
 fi
-	
-echo "Generating data files for $dt..."
 
-scp pi@teald.local:TEALD/raw/*_${dt}.csv ./raw/
+echo "Generating house 99 data files for $dt..."
 
-~/SourceCode/TEALD/power_wrangler.py $dt
+scp pi@RAE.local:/RAE/raw/*_${dt}.csv ./raw/
 
-~/SourceCode/TEALD/TEALD_wrangler.py $dt
+./wrangle_power.py 99 1 no-header $dt
+
+./wrangle_daily.py 99 1 no-header $dt

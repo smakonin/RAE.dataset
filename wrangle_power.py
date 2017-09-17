@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 #
-# power_wrangler.py -- Copyright (C) 2016-2017 Stephen Makonin
+# wrangle_power.py -- Copyright (C) 2016-2017 Stephen Makonin
 #
 
 import os, sys
@@ -11,13 +11,13 @@ def int32(lsw, msw):
 
 print()
 print('----------------------------------------------------------------------------------------------')
-print('Wrangle daily raw data files to store only power data  --  Copyright (C) 2016 Stephen Makonin.')
+print('Wrangle power raw data files to store only power data  --  Copyright (C) 2016 Stephen Makonin.')
 print('----------------------------------------------------------------------------------------------')
 print()
 
-if len(sys.argv) != 5:
+if len(sys.argv) != 6:
     print()
-    print('USAGE: %s [house #] [block #] [header|no-header] [date, e.g., 2016-02-07]' % (sys.argv[0]))
+    print('USAGE: %s [house #] [block #] [header|no-header] [date, e.g., 2016-02-07] [sub-meters]' % (sys.argv[0]))
     print()
     exit(1)
 
@@ -25,9 +25,10 @@ house = int(sys.argv[1])
 block = int(sys.argv[2])
 header = True if sys.argv[3] == 'header' else False
 date = sys.argv[4]
+submeter_count = int(sys.argv[5])
 
-raw_dir = './raw'
-mains_file = '%s/EMU2_%s.csv' % (raw_dir, date)
+raw_dir = './raw/house%d' % (house)
+mains_file = '%s/IHD_%s.csv' % (raw_dir, date)
 subs_file = '%s/PS24_%s.csv' % (raw_dir, date)
 
 print('Checking for existance of file: %s' % (mains_file))
@@ -57,7 +58,7 @@ for l in mains_raw:
     l = l.split(',')
     mains_step1.append(l)
 
-print('Converting subs data...')
+print('Converting subs data (%d sub-meters)...' % submeter_count)
 subs_step1 = []
 for l in subs_raw:
     l = l.strip()
@@ -71,7 +72,8 @@ for l in subs_raw:
 meter_count = 8
 circuit_count = meter_count * 3
 final_file = './final/house%d_power_blk%d.csv' % (house, block)
-heading = 'unix_ts,mains,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24'
+
+heading = 'unix_ts,mains,' + ','.join([str(i) for i in range(1, submeter_count+1)])
 
 f = open(final_file, 'a')
 if header: f.write(heading + '\n')
@@ -111,9 +113,9 @@ for subs_i in range(0, len(subs_step1), meter_count):
             if mains_i < len(mains_step1) and int(mains_step1[mains_i][0]) == new_ts:
                 mains = str(int(float(mains_step1[mains_i][1]) * 1000))
                 mains_i += 1
-            f.write('%d,%s,,,,,,,,,,,,,,,,,,,,,,,,\n' % (new_ts, mains))
+            f.write('%d,%s%s\n' % (new_ts, mains, ',' * submeter_count))
 
-    f.write(','.join(l) + '\n')
+    f.write(','.join(l[:submeter_count+2]) + '\n')
     prev_ts = ts
     count += 1
 

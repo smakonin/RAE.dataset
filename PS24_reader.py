@@ -16,7 +16,7 @@ print()
 if platform.system() == 'Darwin':
     dev = '/dev/tty.usbmodem41'
 elif platform.system() == 'Linux':
-    dev = '/dev/ttyACM1'
+    dev = '/dev/ttyACM0'
 else:
     print('ERROR: unknown os type!')
     exit(0)

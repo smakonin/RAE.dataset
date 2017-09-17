@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 #
-# daily_wrangler.py -- Copyright (C) 2016-2017 Stephen Makonin
+# wrangle_daily.py -- Copyright (C) 2016-2017 Stephen Makonin
 #
 
 import os, sys
@@ -15,9 +15,9 @@ print('Wrangle daily raw data files to the RE dataset format  --  Copyright (C) 
 print('----------------------------------------------------------------------------------------------')
 print()
 
-if len(sys.argv) != 5:
+if len(sys.argv) != 6:
     print()
-    print('USAGE: %s [house #] [block #] [header|no-header] [date, e.g., 2016-02-07]' % (sys.argv[0]))
+    print('USAGE: %s [house #] [block #] [header|no-header] [date, e.g., 2016-02-07] [sub-meters]' % (sys.argv[0]))
     print()
     exit(1)
 
@@ -25,9 +25,10 @@ house = int(sys.argv[1])
 block = int(sys.argv[2])
 header = True if sys.argv[3] == 'header' else False
 date = sys.argv[4]
+submeter_count = int(sys.argv[5])
 
-raw_dir = './raw'
-mains_file = '%s/EMU2_%s.csv' % (raw_dir, date)
+raw_dir = './raw/house%d' % (house)
+mains_file = '%s/IHD_%s.csv' % (raw_dir, date)
 subs_file = '%s/PS24_%s.csv' % (raw_dir, date)
 
 print('Checking for existance of file: %s' % (mains_file))
@@ -51,8 +52,6 @@ subs_raw = list(f_subs)
 f_subs.close()
 
 meter_count = 8
-submeter_count = 24
-circuit_count = meter_count * 3
 seconds_per_day = 86400
 mains_raw_lines = seconds_per_day // 15
 subs_raw_lines = seconds_per_day * 8
