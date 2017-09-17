@@ -1,0 +1,21 @@
+ 1 House Sub-Panel L1
+ 2 House Sub-Panel L2
+ 3 Lights & Plugs (general label)
+ 4 Clothes Dryer L1
+ 5 Clothes Dryer L2
+ 6 Bedroom Plugs
+ 7 Built-in Vacuum
+ 8 Boiler (for hot water and radiant heating)
+ 9 Lights & Plugs (general label)
+10 Clothes Washer
+11 Kitchen Fridge
+12 Lights & Plugs (general label, incl. Internet modem and network equipment)
+13 Bedrooms AFCI Arc-Fault Plugs
+14 Kitchen Counter Plugs
+15 Kitchen Counter Plugs
+16 Lights & Plugs (general label)
+17 Lights & Plugs (general label)
+18 Outside Plugs
+19 Dishwasher
+20 Lights & Plugs (general label)
+21 Mobile Phone Changers (garburator & microwave not installed)
