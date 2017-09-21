@@ -6,12 +6,12 @@
 # Copyright (C) 2017 Stephen Makonin
 #
 
-house=1
-submeters=24
+house=2
+submeters=21
 
-blocks=2
-block_dts=(2016-02-07 2016-03-06)
-block_days=(9 63)
+blocks=1
+block_dts=(2017-09-13)
+block_days=(6)
 
 for ((i=0; i<$blocks; i++))
 do

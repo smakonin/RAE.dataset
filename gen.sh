@@ -9,10 +9,10 @@ else
 	dt=$1
 fi
 
-echo "Generating house 99 data files for $dt..."
+echo "Copying remote data files for $dt..."
+scp pi@RAE.local:/RAE/raw/*_${dt}.csv ./raw/house2/
+#wc -l *_${dt}.csv
 
-scp pi@RAE.local:/RAE/raw/*_${dt}.csv ./raw/
-
-./wrangle_power.py 99 1 no-header $dt
-
-./wrangle_daily.py 99 1 no-header $dt
+echo "Generating house 2 data files for $dt..."
+./wrangle_power.py 2 1 no-header $dt 21
+#./wrangle_daily.py 2 1 no-header $dt 21

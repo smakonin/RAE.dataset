@@ -38,7 +38,7 @@ with daemon.DaemonContext():
         ts = int(time.time())
         dt = datetime.fromtimestamp(ts)
 
-        log_name = '%s/PS24_%04d-%02d-%02d.csv' % (data_dir, dt.year, dt.month, dt.day)
+        log_name = '%s/SUB_%04d-%02d-%02d.csv' % (data_dir, dt.year, dt.month, dt.day)
 
         f = open(log_name, 'a')
         for i in range(meter_count):
@@ -47,4 +47,3 @@ with daemon.DaemonContext():
             f.write(','.join([str(v) for v in raw]) + '\n')
 
         f.close()
-

@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 #
-# PS24_reader.py -- Copyright (C) 2016 Stephen Makonin
+# SUB_reader.py -- Copyright (C) 2016 Stephen Makonin
 #
 
 import os, sys, platform, time, datetime, minimalmodbus

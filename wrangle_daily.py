@@ -29,7 +29,7 @@ submeter_count = int(sys.argv[5])
 
 raw_dir = './raw/house%d' % (house)
 mains_file = '%s/IHD_%s.csv' % (raw_dir, date)
-subs_file = '%s/PS24_%s.csv' % (raw_dir, date)
+subs_file = '%s/SUB_%s.csv' % (raw_dir, date)
 
 print('Checking for existance of file: %s' % (mains_file))
 if not os.path.isfile(mains_file):
