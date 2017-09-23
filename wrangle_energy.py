@@ -16,9 +16,11 @@ print('Wrangle energy raw data files to store only power data  --  Copyright (C)
 print('-----------------------------------------------------------------------------------------------')
 print()
 
-if len(sys.argv) != 6:
+if len(sys.argv) != 7:
     print()
-    print('USAGE: %s [house #] [block #] [header|no-header] [date, e.g., 2016-02-07] [sub-meters]' % (sys.argv[0]))
+    print('USAGE: %s [house #] [block #] [header|no-header] [date, e.g., 2016-02-07] [sub-meters] [interval]' % (sys.argv[0]))
+    print()
+    print('       interval - one of: 1min, 15min, 30min, 1hr, 1day')
     print()
     exit(1)
 
@@ -27,6 +29,9 @@ block = int(sys.argv[2])
 header = True if sys.argv[3] == 'header' else False
 date = sys.argv[4]
 submeter_count = int(sys.argv[5])
+
+intervals = {'1min': 60, '15min': 900, '30min': 1800, '1hr': 3600, '1day': 86400 }
+sample_steps = intervals[sys.argv[6]]
 
 raw_dir = './raw/house%d' % (house)
 mains_file = '%s/IHD_%s.csv' % (raw_dir, date)
@@ -76,8 +81,6 @@ final_file = './final/house%d_energy_blk%d.csv' % (house, block)
 
 heading = 'unix_ts,mains,' + ','.join(['sub' + str(i) for i in range(1, submeter_count+1)])
 
-seconds_per_day = 86400
-hrs_step = 3600
 mains_i = 0
 offset = 2
 count = 0
@@ -93,9 +96,9 @@ for subs_i in range(0, len(subs_step1), meter_count):
         mains = float(mains_step1[mains_i][2])
         mains_i += 1
 
-    #print(ts, mains, ts % hrs_step)
+    #print(ts, mains, ts % sample_steps)
 
-    if ts % hrs_step != 0 and subs_i // meter_count < seconds_per_day - 1:
+    if ts % sample_steps != 0 and subs_i // meter_count < intervals['1day'] - 1:
         prev_ts = ts
         continue
 

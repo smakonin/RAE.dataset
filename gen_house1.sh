@@ -28,8 +28,8 @@ do
 
         echo "******** processing data for ${dt}..."
         #./wrangle_daily.py ${house} ${blk} ${hdr} ${dt} ${submeters}
-        ./wrangle_power.py ${house} ${blk} ${hdr} ${dt} ${submeters}
-        ./wrangle_energy.py ${house} ${blk} ${hdr} ${dt} ${submeters}
+        #./wrangle_power.py ${house} ${blk} ${hdr} ${dt} ${submeters}
+        ./wrangle_energy.py ${house} ${blk} ${hdr} ${dt} ${submeters} 1hr
     done
 done
 
