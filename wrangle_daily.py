@@ -11,7 +11,7 @@ def int32(lsw, msw):
 
 print()
 print('----------------------------------------------------------------------------------------------')
-print('Wrangle daily raw data files to the RE dataset format  --  Copyright (C) 2016 Stephen Makonin.')
+print('Wrangle daily raw data files to the RE dataset format  --  Copyright (C) 2017 Stephen Makonin.')
 print('----------------------------------------------------------------------------------------------')
 print()
 

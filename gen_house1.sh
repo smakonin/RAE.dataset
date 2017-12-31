@@ -16,7 +16,7 @@ block_days=(9 63)
 for ((i=0; i<$blocks; i++))
 do
     blk=$((i+1))
-    echo "******** block ${blk} starts on $${block_dts[$i]} and has {block_days[$i]} days:"
+    echo "******** block ${blk} starts on ${block_dts[$i]} and has ${block_days[$i]} days:"
     for ((j=0; j<${block_days[$i]}; j++))
     do
         dt=$(date -j -f %Y-%m-%d -v+${j}d ${block_dts[$i]} +%Y-%m-%d)
@@ -28,9 +28,9 @@ do
 
         echo "******** processing data for ${dt}..."
         #./wrangle_daily.py ${house} ${blk} ${hdr} ${dt} ${submeters}
-        #./wrangle_power.py ${house} ${blk} ${hdr} ${dt} ${submeters}
-        ./wrangle_energy.py ${house} ${blk} ${hdr} ${dt} ${submeters} 1hr
+        ./wrangle_power.py ${house} ${blk} ${hdr} ${dt} calc ${submeters}
     done
+    ./wrangle_energy.py ${house} ${blk} header ${block_dts[$i]} ${block_days[$i]} calc ${submeters} 1hr
 done
 
 echo "******** done!"

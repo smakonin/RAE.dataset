@@ -1,0 +1,3 @@
+type      id    power_data submeters tstat_data block_count timezone                active
+house     1     Yes        24        Yes        2           America/Vancouver       No
+house     2     Yes        21        No         1           America/Vancouver       Yes
