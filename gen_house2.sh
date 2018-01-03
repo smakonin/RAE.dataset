@@ -8,6 +8,8 @@
 
 house=2
 submeters=21
+mains=1,2
+vreads=1,2,2,1,2,1,2,2,1,2,2,1,2,1,1,2,1,2,2,1,2
 
 blocks=1
 block_dts=(2017-09-13)
@@ -27,10 +29,11 @@ do
         fi
 
         echo "******** processing data for ${dt}..."
-        #./wrangle_daily.py ${house} ${blk} ${hdr} ${dt} ${submeters}
-        #./wrangle_power.py ${house} ${blk} ${hdr} ${dt} 1,2 ${submeters}
+        #./report_missing.py ${house} ${dt} ${submeters}
+        ./wrangle_subs.py ${house} ${blk} ${hdr} ${dt} ${submeters} ${vreads}
+        #./wrangle_power.py ${house} ${blk} ${hdr} ${dt} ${mains} ${submeters}
     done
-    ./wrangle_energy.py ${house} ${blk} header ${block_dts[$i]} ${block_days[$i]} 1,2 ${submeters} 1hr
+    #./wrangle_energy.py ${house} ${blk} header ${block_dts[$i]} ${block_days[$i]} 1,2 ${submeters} 1hr
 done
 
 echo "******** done!"

@@ -1,0 +1,23 @@
+House 1:
+
+******** processing data for 2016-03-06...
+	 ERROR: 1 missing readings after ts  1457282013
+	 ERROR: 5 missing readings after ts  1457282032
+	 ERROR: 3 missing readings after ts  1457282052
+	 ERROR: 3 missing readings after ts  1457282072
+	 ERROR: 2 missing readings after ts  1457282075
+	 ERROR: 1 missing readings after ts  1457282092
+	 ERROR: 1 missing readings after ts  1457282117
+******** processing data for 2016-04-25...
+	 ERROR: 3 missing readings after ts  1461579951
+******** processing data for 2016-05-01...
+	 ERROR: 2 missing readings after ts  1462153052
+
+House 2:
+
+******** processing data for 2017-09-16...
+	 ERROR: 2 missing readings after ts  1505568340
+******** processing data for 2017-10-02...
+	 ERROR: 1 missing readings after ts  1506966183
+******** processing data for 2017-11-04...
+	 ERROR: 1 missing readings after ts  1509855470

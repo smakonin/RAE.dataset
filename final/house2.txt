@@ -1,4 +1,5 @@
 House ID:        2
+Type Details:    Residential side-attached duplex
 Location:        Burnaby, BC, Canada
 Local Timezone:  America/Vancouver
 Year Built:      2016
@@ -7,7 +8,7 @@ EnerGuide:
 HVAC Type:	 In-floor radiant (with gas boiler)
 Lighting:        Mainly LED with some zirconia light bulbs in the bathrooms
 Thermostat(s):   1x Ecobee 3, 4x Ecobee 3 Lite
-IHD Device:      Rainforest Eagle
+IHD Device:      Rainforest Eagle 200
 Sub-meter Equip: DENT PowerScout 24
 Sub-meter Count: 21
 Sub-meter Mains: sub1,Sub2
@@ -24,8 +25,8 @@ Occupant Notes:  1
 Sampling Blocks: 1
 1: 2017-09-13 to 2017-11-1, 59 days
 
-Missing Data:    4
-2016-03-06: 16, not recorded failed to read meter
-2016-03-13: 3600, Daylight Saving Time change (Sunday, March 13, at 3:00 AM)
-2016-04-25: 3, not recorded failed to read meter
-2016-05-01: 2, not recorded failed to read meter
+Missing Data:    3
+2017-09-16: 2, not recorded failed to read meter
+2017-10-02: 1, not recorded failed to read meter
+2017-11-04: 1, not recorded failed to read meter
+*** Note: DST Ended on Sunday, November 5, 2:00am

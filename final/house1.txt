@@ -1,4 +1,5 @@
 House ID:        1
+Type Details:    Residential single detached house w/ rental suite
 Location:        Burnaby, BC, Canada
 Local Timezone:  America/Vancouver
 Year Built:      1955
@@ -15,8 +16,8 @@ Active Site:     No
 Other DOI/URL:   http://dx.doi.org/10.1038/sdata.2016.37
 
 Floors:          2
-1: Level 1, 999 m^2, 3 occupants
-2: Basement, 999 m^2, 1 rental suite occupant
+1: Level 1, 99.5 m^2, 3 occupants
+2: Basement, 99.5 m^2, 1 rental suite occupant
 
 Occupant Notes:  3
 1: During school Spring Break (March 11--28) the child was at home during days.
