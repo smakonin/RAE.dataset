@@ -4,7 +4,7 @@ These are the scripts that where used to capture data and convert that raw data 
 
 The dataset can be downloaded from Harvard Dataverse via: http://dx.doi.org/10.7910/DVN/ZJW4LC
 
-To read more about this dataset down load the accompanying paper at: http://arxiv.org/abs/1705.05767
+To read more about this dataset down load the accompanying paper at: http://dx.doi.org/10.3390/data3010008
 
 The use of these files and/or the RAE dataset requires you to cite:
 
